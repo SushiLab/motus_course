@@ -133,11 +133,7 @@ cd ..
 module load vcp
 module load samtools
 module load python/3.6.0
+cd bbmap
+export PATH=`pwd`:$PATH
+cd ..
 ```
-
-
--------------------------------
-
-## LSF - submitting jobs
-
-Euler is a cluster built from hundreds of compute nodes and few submit nodes. You will log in to one of the submit nodes, prepare your data there and then submit the CPU heavy computation to a compute node.  
