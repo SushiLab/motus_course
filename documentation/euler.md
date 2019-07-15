@@ -1,5 +1,24 @@
+
+
 # Using Euler
 
+
+## Connection to euler
+
+Euler is the ETH supercomputer with a large number of compute nodes. During the course you will use Euler to run mOTUsv2. To login to euler you open ```mobaXterm```, start a new session and type:
+
+```
+ssh euler
+```
+You will be asked if you trust this connect (type yes) and will then be asked for the password (same as for the VM).
+
+After login you should type into your terminal (replace biolcourse-110 with your our username):
+
+```
+cd /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-110/
+```
+
+This is the same folder as you see it on your Windows Desktop and will as data folder for all your computations.
 Euler is the ETH supercomputer. There are two main differences between using euler compared to your own computer.
 
 1. You don't run jobs directly but you submit them to the LSF. The LSF will find a free node and run the job for you.
