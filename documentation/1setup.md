@@ -58,6 +58,7 @@ Tools required for the tutorial are preinstalled and highlighted. Some other too
 - Required software
   - **mobaXterm**
   - **R 3.5.0**
+  - **RStudio**
 - Additional software
   - python version: 3.6.8
   - anaconda: 2019.03  
@@ -71,7 +72,7 @@ Tools required for the tutorial are preinstalled and highlighted. Some other too
 
 
 The VM runs Windows 10. After logging in you will be asked if you want to install updates. Ignore this message.
-Try opening RStudio mobaXterm and see if they work.
+Try opening RStudio and mobaXterm and see if they work.
 Open the network drive on the Desktop (Workshop_Bern). All data used and produced in this course will be stored here.
 
 **Use only the subfolder with your username for writing!. E.g biolcourse-110.**
