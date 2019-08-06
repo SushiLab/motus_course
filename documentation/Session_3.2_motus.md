@@ -6,6 +6,7 @@ Today we will show how to use the tool for the first and second of these tasks, 
 
 The most basic command is ***profile***, which runs the entire mOTUs pipeline with default parameters.
 
-> profile -f FILE -r FILE -t THREADS # THIS WILL HAVE TO BE QUEUED?
-> WHILST RUNNING DESCRIBE THE INDIVIDUAL STEPS
+```profile -f FILE -r FILE -t THREADS # THIS WILL HAVE TO BE QUEUED?
+WHILST RUNNING DESCRIBE THE INDIVIDUAL STEPS
+```
 
