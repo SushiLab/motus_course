@@ -7,12 +7,12 @@ The `mOTUsv2` tool uses a set of 10 marker genes to profile metagenomic and meta
 
 `mOTUSv2` is capable of running on different operating systems, uses relatively low memory and can be executed on machines with only a few CPUs. However, in order to process all `mOTUSv2` jobs in parallel, we will fall back to use a dedicated compute cluster for today's tutorial.
 
-To do so will first log in to the cluster and install the mOTUSv2 tool.
+We will first log in to the cluster and install the mOTUSv2 tool.
 
 
 -------------------------------
 
-## Connection to the cluster (15min)
+## Connection to the cluster (10min)
 
 Euler is the ETH supercomputer with a large number of compute nodes. During the course you will use Euler to run `mOTUsv2`. To login to euler you open ```mobaXterm```, start a new session and type:
 
@@ -64,12 +64,11 @@ cd ..
 
 # inspect a file
 less /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/test/test.motus
-# Use cursor to navigate, use space to go one page down, use q to leave the program
+# Use the cursor to navigate, use space to go one page down, use q to leave the program
 ```
 
 
 Mastering the terminal is an incredible useful skill for most bioinformatic workflows. We show you only the minimum number commands that are needed for this tutorial. There're great [tutorials](http://swcarpentry.github.io/shell-novice/) if you would like to continue working with the terminal.
-
 
 
 
@@ -91,7 +90,7 @@ pwd
 
 We will follow the installation instructions from the [mOTUSv2](https://motu-tool.org/) website. At home you can reuse the installation instructions and tutorials from this website.
 
-The `mOTUSv2` software is written in `python3` and requires the `bwa` aligner and `samtools` as prerequisites. All three are already installed on euler but need to be loaded:
+The `mOTUSv2` software is written in `python3` and requires the `bwa` aligner and `samtools` as prerequisites. All prerequisites are already installed on euler but need to be loaded:
 
 ```bash
 # load bwa, samtools and python
