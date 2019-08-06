@@ -1,4 +1,4 @@
-## Infrastructure (30min)
+## Infrastructure (20min)
 
 The resources for this course are provided in the form of a virtual machine. All required software is preinstalled and we provide sufficient storage for all data. The data you create will be provided to you after the course via our website.
 
