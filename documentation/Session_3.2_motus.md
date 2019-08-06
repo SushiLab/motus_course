@@ -18,8 +18,7 @@ profile -f <forward reads> -r <reverse reads> -o <output file> -t <no. threads>
 
 Whilst this is running, let's take a look at the individual steps of the pipeline.
 
-FIGURE
-
+![motus_profile](/images/motus_profile.png)
 
 
 ### mOTUs output
