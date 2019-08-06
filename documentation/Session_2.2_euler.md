@@ -119,20 +119,10 @@ cd ..
 
 -------------------------------
 
-## After each login
+## Environment
 
-**You will need to run these commands after each login. This is due to the nature of how software is handled on euler.**
+You will need to run the following command after each login to the server:
 
 ```bash
-# Replace the XX with your username/number
-cd /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-XX/
-cd mOTUs_v2
-export PATH=`pwd`:$PATH
-cd ..
-module load vcp
-module load samtools
-module load python/3.6.0
-cd bbmap
-export PATH=`pwd`:$PATH
-cd ..
+source /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/bin/configure.sh
 ```
