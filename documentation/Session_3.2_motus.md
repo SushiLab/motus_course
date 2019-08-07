@@ -8,7 +8,7 @@ Today we will show how to use the tool for the first and second of these tasks, 
 ### Running a single sample
 The most basic command is ***profile***, which runs the entire mOTUs pipeline with default parameters.
 ```bash
-profile -f <forward reads> -r <reverse reads> -o <output file> -t <no. threads>
+motus profile -f <forward reads> -r <reverse reads> -o <output file> -t <no. threads>
 ```
 We will have to put this command into a job submission script as described in the earlier session and then leave it to run in the queueing system.
 
@@ -19,6 +19,22 @@ Whilst this is running, let's take a look at the individual steps of the pipelin
 
 #### map_tax
 This command uses the program *BWA* to align the reads against the mOTUs database. The output is a *SAM* or *BAM* file (*Sequence* or *Binary Alignment/Map*), which is a standard format used by the *SAMtools* set of utilities.
+```bash
+motus map_tax -f <forward reads> -r <reverse reads> -o <output file> -b -t <no. threads>
+```
+
+#### calc_mgc
+The intermediate step calculates the number of reads aligned to each marker gene cluster, weighted by gene length.
+```bash
+motus calc_mgc -n <sample name> -i <bam file> -o <output file>
+```
+The output file is formatted into two columns: the name of the marker gene cluster and the count.
+
+#### calc_motu
+The final step controls the output format of the final abundance table.
+```bash
+motus calc_motu -n <sample name> -i <mgc file> -o <output file>
+```
 
 ### mOTUs output
 
