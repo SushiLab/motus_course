@@ -47,6 +47,4 @@ Streptococcus anginosus [ref_mOTU_v2_0004]      0.0000000000
 Streptococcus anginosus [ref_mOTU_v2_0005]      0.0000000000
 ```
 
-### Running multiple samples
-
 ### Merging output
