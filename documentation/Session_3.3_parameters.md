@@ -46,3 +46,7 @@ There are also a number of parameters that modify the operation of the mOTUs alg
 The result with **highest sensitivity** is obtained with `-g 1 -l 30 -y base.coverage`, allowing to detect low abundance bugs (at the cost of having more false positives).
 
 The result with **highest precision** is obtained with `-g 6 -l 100 -y insert.scaled_counts`, reducing the false positives to the minimum.
+
+---
+
+We will now produce two additional outputs for later comparison with the default output of ***profile***. Run the same set of data as you chose initially, but with highest sensitivity, then highest precision parameters.
