@@ -43,6 +43,6 @@ There are also a number of parameters that modify the operation of the mOTUs alg
                    Values: [base.coverage, insert.raw_counts, insert.scaled_counts]
 ```
 
-The result with highest sensitivity is obtained with `-g 1 -l 30 -y base.coverage`, allowing to detect low abundance bugs (at the cost of having more false positives).
+The result with **highest sensitivity** is obtained with `-g 1 -l 30 -y base.coverage`, allowing to detect low abundance bugs (at the cost of having more false positives).
 
-The result with highest precision is obtained with `-g 6 -l 100 -y insert.scaled_counts`, reducing the false positives to the minimum.
+The result with **highest precision** is obtained with `-g 6 -l 100 -y insert.scaled_counts`, reducing the false positives to the minimum.
