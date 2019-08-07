@@ -28,7 +28,7 @@ The intermediate step calculates the number of reads aligned to each marker gene
 ```bash
 motus calc_mgc -n <sample name> -i <bam file> -o <output file>
 ```
-The output file is formatted into two columns: the name of the marker gene cluster and the count.
+The output format consists of two columns: the name of the marker gene cluster and the count.
 
 #### calc_motu
 The final step controls the output format of the final abundance table.
@@ -37,6 +37,15 @@ motus calc_motu -n <sample name> -i <mgc file> -o <output file>
 ```
 
 ### mOTUs output
+The standard output format consists of two columns: the mOTU name and the relative abundance of the mOTU in the sample. Note that the table lists all possible mOTUs, i.e.: it includes zeros.
+```bash
+#consensus_taxonomy     M01.1-V1-stool-metaG
+Kandleria vitulina [ref_mOTU_v2_0001]   0.0000000000
+Methyloversatilis universalis [ref_mOTU_v2_0002]        0.0000000000
+Megasphaera genomosp. [ref_mOTU_v2_0003]        0.0000000000
+Streptococcus anginosus [ref_mOTU_v2_0004]      0.0000000000
+Streptococcus anginosus [ref_mOTU_v2_0005]      0.0000000000
+```
 
 ### Running multiple samples
 
