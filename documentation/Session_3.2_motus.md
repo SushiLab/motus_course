@@ -48,3 +48,8 @@ Streptococcus anginosus [ref_mOTU_v2_0005]      0.0000000000
 ```
 
 ### Merging output
+When you have run mOTUs on multiple samples, you can combine the output into a single, tab-separated table with the ***merge*** command.
+```bash
+motus merge -i <motu file 1>,<motu file 2>,... -o <output file>
+motus merge -d <directory> -o <output file>
+```
