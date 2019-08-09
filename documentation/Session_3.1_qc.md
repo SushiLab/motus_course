@@ -63,7 +63,10 @@ There is a large number of tools that perform Read QC. But most tools try to per
 2. **Contamination** - Your metagenomic sample contains host DNA (e.g. Human) or artifical spike-ins (e.g. Phi X) which is then being sequenced --> Remove full sequences that come from host contamination.
 3. **Base Quality** - The most common error in Illumina sequencing is the introduction of wrong bases (mutations not indels) into the resulting sequence. This problem is especially prominent towards the end of the sequences. --> Remove the low quality tail of sequences based on quality scores. 
 
+We will run a pipeline that combines all three steps and creates qc'ed read files that we can use as input for mOTUsv2.
 
+
+*There're many options on how to tweak the performance of the QC step. We use a similar pipeline in our lab and we're confident that it produces solid results. For your own data you will need to look into the pipeline and find parameters that suit your analysis best.*
 
 
 
