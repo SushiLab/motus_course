@@ -1,7 +1,7 @@
 
 # Data
 
-For this course we will use public datasets from [Heintz-Buschart, A. et al. Integrated multi-omics of the human gut microbiome in a case study of familial type 1diabetes. Nat. Microbiol](https://www.nature.com/articles/nmicrobiol2016180).
+For this course we will use public datasets from [Heintz-Buschart, A. et al. Integrated multi-omics of the human gut microbiome in a case study of familial type 1 diabetes](https://www.nature.com/articles/nmicrobiol2016180).
 
 This study comprises in total 89 sequencing datasets of which 53 come from metagenomic and 36 come from metatranscriptomic sequencing.
 
@@ -16,7 +16,7 @@ ls /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/data
   M02.1-V3-stool-metaT
   ...
 
-ls M01.1-V1-stool-metaG/*
+ls /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/data/M01.1-V1-stool-metaG/*
   
   M01.1-V1-stool-metaG/M01.1-V1-stool-metaG.1.fq.gz # forward read file
   M01.1-V1-stool-metaG/M01.1-V1-stool-metaG.2.fq.gz # reverse read file
