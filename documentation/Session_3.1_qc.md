@@ -36,6 +36,21 @@ ls /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35
   
 ```
 
+Everyone will have a different sample to work on. That is why we refer to read files the following:
+
+```bash
+<forward raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M01.1-V1-stool-metaG.1.fq.gz
+<reverse raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M01.1-V1-stool-metaG.2.fq.gz
+
+or for user biolcourse-34
+
+<forward raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M02.1-V3-stool-metaT.1.fq.gz
+<reverse raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M02.1-V3-stool-metaT.2.fq.gz
+
+```
 
 
 # Quality Control (15 min)
+
+
+
