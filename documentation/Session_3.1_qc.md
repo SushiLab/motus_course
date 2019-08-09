@@ -59,9 +59,9 @@ The sequence files that you download from your sequencing center usually come wi
 
 There is a large number of tools that perform Read QC. But most tools try to perform three crucial steps:
 
-1. Remove Adapters - Before sequencing you add adapters to insert in order for it to bind to the flowcell. The sequencer sometines reads into those adapters --> Need to remove beginning/end of the sequence that contains adapter sequences
-2. Contamination - Your metagenomic sample contains host DNA (e.g. Human) or artifical spike-ins (e.g. Phi X) which is then being sequenced --> Remove full sequences that come from host contamination.
-3. Base Quality - The most common error in Illumina sequencing is the introduction of wrong bases (mutations not indels) into the resulting sequence. This problem is especially prominent towards the end of the sequences. --> Remove the low quality tail of sequences based on quality scores. 
+1. **Remove Adapters** - Before sequencing you add adapters to insert in order for it to bind to the flowcell. The sequencer sometines reads into those adapters --> Need to remove beginning/end of the sequence that contains adapter sequences
+2. **Contamination** - Your metagenomic sample contains host DNA (e.g. Human) or artifical spike-ins (e.g. Phi X) which is then being sequenced --> Remove full sequences that come from host contamination.
+3. **Base Quality** - The most common error in Illumina sequencing is the introduction of wrong bases (mutations not indels) into the resulting sequence. This problem is especially prominent towards the end of the sequences. --> Remove the low quality tail of sequences based on quality scores. 
 
 
 
