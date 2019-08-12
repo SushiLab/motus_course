@@ -1,5 +1,18 @@
 # Analysis of mOTUs Output in R
 
+### R Studio
+
+To work in R, we are going to use the R Studio interface:
+
+![rstudio](/images/rstudio.png)
+
+The panels are:
+
+* top-left: script editor
+* top-right: variable list
+* bottom-left: console
+* bottom-right: file browser / plots / package list / help
+
 ### Comparing the data from running mOTUs with different parameters
 #### Sort mOTUs from most to least abundant and remove those that never appear
 ```R
