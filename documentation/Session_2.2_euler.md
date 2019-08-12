@@ -104,8 +104,9 @@ Next we install the mOTUSv2 software:
 
 ```bash
 # Running the setup.py command will take ~1 minute
-git clone https://github.com/motu-tool/mOTUs_v2.git
-cd mOTUs_v2
+wget https://github.com/motu-tool/mOTUs_v2/archive/2.1.1.tar.gz
+tar -xzvf 2.1.1.tar.gz
+cd mOTUs_v2-2.1.1
 python setup.py
 export PATH=`pwd`:$PATH
 python test.py
