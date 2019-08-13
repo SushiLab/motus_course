@@ -1,5 +1,5 @@
 # Introduction to mOTUs
-mOTUs uses 10 of the 40 universal marker genes to taxonomically profile metagenomes, to quantify metabolically active members in metatranscriptomics and to quantify differences between strain populations using single nucleotide variation (SNV) profiles.
+mOTUs uses 10 universal marker genes to taxonomically profile metagenomes, to quantify metabolically active members in metatranscriptomics and to quantify differences between strain populations using single nucleotide variation (SNV) profiles.
 
 ---
 
