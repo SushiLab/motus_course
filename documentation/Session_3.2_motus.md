@@ -61,3 +61,5 @@ When you have run mOTUs on multiple samples, you can combine the output into a s
 motus merge -i <motu file 1>,<motu file 2>,... -o <output file>
 motus merge -d <directory> -o <output file>
 ```
+
+Since you have been given metagenomic and metatranscriptomic data for the same sample, run both with default parameters and merge the two sets of results into one .motu file.
