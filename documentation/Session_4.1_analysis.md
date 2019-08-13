@@ -18,7 +18,7 @@ The panels are:
 setwd("S:/biolcourse-34")
 ```
 
-### Comparing the data from running mOTUs with different parameters
+### What is the effect of running mOTUs with different parameters?
 
 #### Sort mOTUs from most to least abundant and remove those that never appear
 ```
@@ -42,7 +42,7 @@ abline(0,1)
 ```
 ___
 
-### Comparing the metagenomic with the metatranscriptomic data
+### How does metagenomic data compare with metatranscriptomic data?
 
 #### Import the data, remove rows with no abundance
 ```
@@ -94,6 +94,8 @@ dm <- vegdist(t(log(valid.data+1e-6)),method="euclidean")
 mds <- monoMDS(dm,pc=T,k=4)
 ```
 
+### Will individuals cluster, will families?
+
 #### Create ordination plot
 ```
 plot(mds$points,pch=20,col=sample.colors)
@@ -118,6 +120,7 @@ legend("topleft",legend=unique(sample.diabetes),fill=unique(sample.diabetes))
 ```
 hc <- as.dendrogram(hclust(dm))
 ```
+### Will samples cluster by individual, by diabetes status?
 
 #### Plot with individual information
 ```
