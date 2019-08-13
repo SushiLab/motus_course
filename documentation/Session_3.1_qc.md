@@ -110,7 +110,6 @@ You find the command in:
 less /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/qc.sh
 ```
 
-```
 The command can be executed using:
 
 ```bash
