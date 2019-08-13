@@ -120,5 +120,44 @@ The command can be executed using:
 The execution will take a couple minutes and will generate the following files:
 
 ```bash
-files
+
+cd /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/
+ls
+  M04.6-V2-stool-metaG.qc.1.fq.gz --> <forward metag read file> (Input for mOTUsv2)
+  M04.6-V2-stool-metaG.qc.2.fq.gz --> <reverse metag read file> (Input for mOTUsv2)
+  M04.6-V2-stool-metaT.qc.1.fq.gz --> <forward metat read file> (Input for mOTUsv2)
+  M04.6-V2-stool-metaT.qc.2.fq.gz --> <reverse metat read file> (Input for mOTUsv2)
+  adapterRemoval.log              --> stats on adapter removal
+  phixRemoval.log                 --> stats on phix removal
+  qc.log                          --> stats on low quality base removal
 ```
+
+```bash
+
+cat adapterRemoval.log
+  ...
+  Input:                          40429612 reads          3528670429 bases.
+  KTrimmed:                       25871 reads (0.06%)     299666 bases (0.01%)
+  Total Removed:                  8 reads (0.00%)         299666 bases (0.01%)
+  Result:                         40429604 reads (100.00%)        3528370763 bases (99.99%)
+  ...
+
+cat phixRemoval.log
+  ...
+  Input:                  	40429604 reads 		3528370763 bases.
+  Contaminants:           	0 reads (0.00%) 	0 bases (0.00%)
+  Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+  Result:                 	40429604 reads (100.00%) 	3528370763 bases (100.00%)
+  ...
+
+cat qc.log
+  ...
+  Input:                  	40429604 reads 		3528370763 bases.
+  QTrimmed:               	10584630 reads (26.18%) 	141547297 bases (4.01%)
+  Low quality discards:   	1692080 reads (4.19%) 	98482891 bases (2.79%)
+  Total Removed:          	3001294 reads (7.42%) 	240030188 bases (6.80%)
+  Result:                 	37428310 reads (92.58%) 	3288340575 bases (93.20%)
+  ...
+```
+
+
