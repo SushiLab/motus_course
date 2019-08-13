@@ -136,26 +136,26 @@ ls
 
 cat adapterRemoval.log
   ...
-  Input:                          40429612 reads          3528670429 bases.
-  KTrimmed:                       25871 reads (0.06%)     299666 bases (0.01%)
-  Total Removed:                  8 reads (0.00%)         299666 bases (0.01%)
-  Result:                         40429604 reads (100.00%)        3528370763 bases (99.99%)
+  Input:                          40429612 reads              3528670429 bases.
+  KTrimmed:                          25871 reads (0.06%)          299666 bases (0.01%)
+  Total Removed:                         8 reads (0.00%)          299666 bases (0.01%)
+  Result:                         40429604 reads (100.00%)    3528370763 bases (99.99%)
   ...
 
 cat phixRemoval.log
   ...
-  Input:                  	40429604 reads 		3528370763 bases.
-  Contaminants:           	0 reads (0.00%) 	0 bases (0.00%)
-  Total Removed:          	0 reads (0.00%) 	0 bases (0.00%)
+  Input:                  	40429604 reads 		        3528370763 bases.
+  Contaminants:           	       0 reads (0.00%) 	           0 bases (0.00%)
+  Total Removed:          	       0 reads (0.00%) 	           0 bases (0.00%)
   Result:                 	40429604 reads (100.00%) 	3528370763 bases (100.00%)
   ...
 
 cat qc.log
   ...
-  Input:                  	40429604 reads 		3528370763 bases.
-  QTrimmed:               	10584630 reads (26.18%) 	141547297 bases (4.01%)
-  Low quality discards:   	1692080 reads (4.19%) 	98482891 bases (2.79%)
-  Total Removed:          	3001294 reads (7.42%) 	240030188 bases (6.80%)
+  Input:                  	40429604 reads 		        3528370763 bases.
+  QTrimmed:               	10584630 reads (26.18%) 	 141547297 bases (4.01%)
+  Low quality discards:   	 1692080 reads (4.19%) 	    98482891 bases (2.79%)
+  Total Removed:          	 3001294 reads (7.42%) 	   240030188 bases (6.80%)
   Result:                 	37428310 reads (92.58%) 	3288340575 bases (93.20%)
   ...
 ```
