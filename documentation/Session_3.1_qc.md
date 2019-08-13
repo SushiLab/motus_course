@@ -3,7 +3,7 @@
 
 For this course we will use public datasets from [Heintz-Buschart, A. et al. Integrated multi-omics of the human gut microbiome in a case study of familial type 1 diabetes](https://www.nature.com/articles/nmicrobiol2016180).
 
-This study comprises in total 89 sequencing datasets of which 53 come from metagenomic and 36 come from metatranscriptomic sequencing.
+This study comprises in total 89 sequencing datasets of which 53 come from metagenomic and 36 come from metatranscriptomic sequencing. We will use the samples for which there're paired metatranscriptomic and metagenomic samples.
 
 Forward and reverse read files for all samples can be found here: `/nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/data`.
 
@@ -22,17 +22,19 @@ ls /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/data/M01.1-V1-stool-metaG/*
   M01.1-V1-stool-metaG/M01.1-V1-stool-metaG.2.fq.gz # reverse read file
 ```
 
-You will perform the first steps of analysis (QC and mOTUsv2) on **one** dataset that is linked to your own folder (e.g. `/nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35` for the user with username `biolcourse-35`).
+You will perform the first steps of analysis (QC and mOTUsv2) on **two** datasets that is linked to your own folder (e.g. `/nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35` for the user with username `biolcourse-35`).
 
-The user `biolcourse-35` has 2 files in the folder:
+The user `biolcourse-35` has 4 files in the folder:
 
 
 ```bash
 
 ls /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35
 
-  M01.1-V1-stool-metaG.1.fq.gz # forward read file
-  M01.1-V1-stool-metaG.2.fq.gz # reverse read file
+  M04.6-V2-stool-metaG.1.fq.gz # forward metag read file
+  M04.6-V2-stool-metaG.2.fq.gz # reverse metag read file
+  M04.6-V2-stool-metaT.1.fq.gz # forward metat read file
+  M04.6-V2-stool-metaT.2.fq.gz # reverse metat read file
   
 ```
 
@@ -42,13 +44,11 @@ Everyone will have a different sample to work on. That is why we refer to read f
 
 for user biolcourse-35
 
-<forward raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M01.1-V1-stool-metaG.1.fq.gz
-<reverse raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M01.1-V1-stool-metaG.2.fq.gz
+<forward metag raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M04.6-V2-stool-metaG.1.fq.gz
+<reverse metag raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M04.6-V2-stool-metaG.2.fq.gz
+<forward metat raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M04.6-V2-stool-metaT.1.fq.gz
+<reverse metat raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M04.6-V2-stool-metaT.2.fq.gz
 
-or for user biolcourse-34
-
-<forward raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M02.1-V3-stool-metaT.1.fq.gz
-<reverse raw reads> --> /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/M02.1-V3-stool-metaT.2.fq.gz
 
 ```
 
@@ -75,25 +75,25 @@ We will run a pipeline that combines all three steps and creates qc'ed read file
 
 
 ```bash
-bbduk.sh -Xmx16G usejni=t threads=12 overwrite=t qin=33 in1=<forward raw reads> in2=<reverse raw reads>\
-ref=/nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/bin/bbmap/resources/adapters.fa ktrim=r \
-k=23 mink=11 hdist=1 out1=<forward noAdapter reads>  out2=<reverse noAdapter reads> pigz=t bgzip=f \
-&> adapterRemoval.log
+bbduk.sh -Xmx6G usejni=t threads=10 overwrite=t qin=33 in1=<forward metag/metat raw reads> \ 
+in2=<reverse metag/metat raw reads> ref=/nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/bin/bbmap/resources/adapters.fa \
+ktrim=r k=23 mink=11 hdist=1 out1=<forward metag/metat noAdapter reads>  \
+out2=<reverse metag/metat noAdapter reads> pigz=t bgzip=f &> adapterRemoval.log
 ```
 
 ## Contamination removal (Phi X)
 
 ```bash
-bbduk.sh -Xmx8G usejni=t threads=12 overwrite=t qin=33 in1=<forward noAdapter reads> \
-in2=<reverse noAdapter reads> out1=<forward noAdapter_noPhiX reads> out2=<reverse noAdapter_noPhiX reads>\
-ref=/nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/bin/bbmap/resources/phix174_ill.ref.fa.gz \
+bbduk.sh -Xmx6G usejni=t threads=2 overwrite=t qin=33 in1=<forward metag/metat noAdapter reads> \
+in2=<reverse noAdapter reads> out1=<forward metag/metat noAdapter_noPhiX reads> \
+out2=<reverse metag/metat noAdapter_noPhiX reads> ref=/nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/bin/bbmap/resources/phix174_ill.ref.fa.gz \
 k=31 hdist=1 pigz=t bgzip=f &> phixRemoval.log
 ```
 
 ## Low Quality Bases removal
 
 ```bash
-bbduk.sh -Xmx8G usejni=t threads=12 overwrite=t qin=33 in1=<forward noAdapter_noPhiX reads>  \
-in2=<reverse noAdapter_noPhiX reads>  out1=<forward reads>  out2=<reverse reads> minlength=45 \
-qtrim=r maq=20 maxns=1 overwrite=t trimq=30 pigz=t bgzip=f &> qc.log
+bbduk.sh -Xmx6G usejni=t threads=10 overwrite=t qin=33 in1=<forward metag/metat noAdapter_noPhiX reads> \
+in2=<reverse metag/metat noAdapter_noPhiX reads>  out1=<forward metag/metat reads>  \
+out2=<reverse metag/metatreads> minlength=45 qtrim=r maq=20 maxns=1 overwrite=t trimq=30 pigz=t bgzip=f &> qc.log
 ```
