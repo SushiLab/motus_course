@@ -13,9 +13,10 @@ The panels are:
 * bottom-left: console
 * bottom-right: file browser / plots / package list / help
 
-# First, set the correct working directory
-
+### First, set the correct working directory
+```
 setwd("S:/biolcourse-34")
+```
 
 ### Comparing the data from running mOTUs with different parameters
 
