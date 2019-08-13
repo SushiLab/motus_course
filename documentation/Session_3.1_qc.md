@@ -97,3 +97,29 @@ bbduk.sh -Xmx6G usejni=t threads=10 overwrite=t qin=33 in1=<forward metag/metat 
 in2=<reverse metag/metat noAdapter_noPhiX reads>  out1=<forward metag/metat reads>  \
 out2=<reverse metag/metatreads> minlength=45 qtrim=r maq=20 maxns=1 overwrite=t trimq=30 pigz=t bgzip=f &> qc.log
 ```
+
+
+# Execution of Quality Control
+
+Creating 6 commands (3\*metag and 3\*metat) and executing them one after another would take too much time. We have prepared a command that will execute the QC for you.
+
+You find the command in:
+
+```bash
+# replace biolcourse-35 with your personal account number
+less /nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/qc.sh
+```
+
+```
+The command can be executed using:
+
+```bash
+# replace biolcourse-35 with your personal account number
+/nfs/nas22/fs2201/biol_isg_course_1/Workshop_Bern/biolcourse-35/qc.sh
+```
+
+The execution will take a couple minutes and will generate the following files:
+
+```bash
+files
+```
