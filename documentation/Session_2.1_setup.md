@@ -75,4 +75,4 @@ The VM runs Windows 10. After logging in you will be asked if you want to instal
 Try opening RStudio and mobaXterm and see if they work.
 Open the network drive on the Desktop (Workshop_Bern). All data used and produced in this course will be stored here.
 
-**Use only the subfolder with your username for writing!. E.g biolcourse-110.**
+**Use only the subfolder with your username for writing!. E.g biolcourse-35.**
