@@ -56,14 +56,14 @@ pwd
 ls
 
 # list all files and folders inside a specific directory
-ls /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/test/
+ls /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/data/
 
 # go one directory up
 cd ..
 # now you are in /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/
 
 # inspect a file
-less /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/test/test.motus
+less /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/data/M01.2-V1-stool-metaG/M01.2-V1-stool-metaG.merged.motus
 # Use the cursor to navigate, use space to go one page down, use q to leave the program
 ```
 
@@ -127,3 +127,8 @@ You will need to run the following command after each login to the server:
 ```bash
 source /nfs/nas22.ethz.ch/fs2201/biol_isg_course_1/Workshop_Bern/bin/configure.sh
 ```
+
+
+## Installation at Home
+
+Installation of mOTUsv2 is very simple. You can either use the package that we provide at bioconda or perform a manual installation similar to the one described above. We recommend to use bioconda as you don't need to install dependencies by hand. A thorough description on how install mOTUsv2 on any macOS or linux device can be found her: [https://motu-tool.org](https://motu-tool.org/installation.html) 
