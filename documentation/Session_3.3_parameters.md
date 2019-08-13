@@ -19,7 +19,7 @@ There are number of optional parameters that can be provided to ***profile*** to
 
 We can for instance modify our output to see counts, rather than relative abundances, and move our analysis to the family level, only allowing reference species:
 ```bash
-motus profile -f <forward reads> -r <reverse reads> -o <output file> -t <no. threads> -e -c -k family
+motus profile -f <forward reads> -r <reverse reads> -o <output file> -t 12 -e -c -k family
 ```
 
 The output looks something like this:
@@ -27,9 +27,15 @@ The output looks something like this:
 #consensus_taxonomy     M01.1-V1-stool-metaG
 Nitrososphaeraceae      0
 Oscillochloridaceae     0
-Demequinaceae   0
-Chromatiaceae   0
-Chthonomonadaceae       0
+...
+Micrococcaceae  0
+Erysipelotrichaceae     38
+Streptococcaceae        13
+candidatus Midichloriaceae      0
+...
+candidatus Poribacteria fam. incertae sedis     0
+candidatus Saccharibacteria fam. incertae sedis 0
+-1      11415
 ```
 
 ### Algorithm Parameters
@@ -45,7 +51,7 @@ There are also a number of parameters that modify the operation of the mOTUs alg
 
 The result with **highest sensitivity** is obtained with `-g 1 -l 30 -y base.coverage`, allowing to detect low abundance bugs (at the cost of having more false positives).
 
-The result with **highest precision** is obtained with `-g 6 -l 100 -y insert.scaled_counts`, reducing the false positives to the minimum.
+The result with **highest precision** is obtained with `-g 6 -l 75 -y insert.scaled_counts`, reducing the false positives to the minimum.
 
 ---
 
