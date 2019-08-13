@@ -55,4 +55,4 @@ The result with **highest precision** is obtained with `-g 6 -l 75 -y insert.sca
 
 ---
 
-We will now produce two additional outputs for later comparison with the default output of ***profile***. Run the same set of data as you chose initially, but with highest sensitivity, then highest precision parameters.
+We will now produce two additional outputs for later comparison with the default output of ***profile***. Run the same set of data as you chose initially, but with highest sensitivity, then highest precision parameters. Then merge these two with the default set of data to make one .motu file.
