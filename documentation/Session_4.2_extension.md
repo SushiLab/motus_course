@@ -100,7 +100,7 @@ GAGAAGGACATAGCGCCCGGCGAAATCGTCTTTCTTCACCGTCTTTCCATCCTGGTTCGG
 
 ...
 
-And also needs to have a taxonomic assignation:
+Each genome needs to have a taxonomic assignation:
 
 ```
 DBLN00000000	2 Bacteria	1224 Proteobacteria	28211 Alphaproteobacteria	204441 Rhodospirillales	41295 Rhodospirillaceae	NA unknown Rhodospirillaceae	NA unknown Rhodospirillaceae
