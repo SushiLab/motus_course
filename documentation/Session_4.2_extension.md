@@ -4,7 +4,7 @@ The mOTUsv2 database is composed from a large number of published genomes and me
 
 In order to add new genomes to the mOTUsv2 database you need to provide one or multiple genomes that:
 
-- are taxinomically annotated using NCBI ids:
+- are taxonomically annotated using NCBI ids:
 ```bash
   DKWZ00000000	2 Bacteria	976 Bacteroidetes	200643 Bacteroidia	171549 Bacteroidales	171551 Porphyromonadaceae	NA unclassified Porphyromonadaceae	2049046 Porphyromonadaceae bacterium
   
@@ -13,8 +13,7 @@ In order to add new genomes to the mOTUsv2 database you need to provide one or m
 - contain at least 6 of the 10 marker genes
 
 
-**This will be a demo/explanation of the extender. Running the extender is relatively quick but rebuilding the mOTUsv2 database
-takes > 15 minutes.**
+**This will be a demo/explanation of the extender. Running the extender is relatively quick but installation and rebuilding of the mOTUsv2 database would take more then the 20 minutes we have in this session.**
 
 
 ## Installation
