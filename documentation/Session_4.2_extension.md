@@ -113,3 +113,55 @@ DKSV00000000	2 Bacteria	1224 Proteobacteria	1236 Gammaproteobacteria	91347 Enter
 DKWZ00000000	2 Bacteria	976 Bacteroidetes	200643 Bacteroidia	171549 Bacteroidales	171551 Porphyromonadaceae	NA unclassified Porphyromonadaceae	2049046 Porphyromonadaceae bacterium
 DLHH00000000	2 Bacteria	976 Bacteroidetes	768503 Cytophagia	768507 Cytophagales	89373 Cytophagaceae	319458 Leadbetterella	NA unknown Leadbetterella
 ```
+
+## Running the extender
+
+Database extension is a three-step pipeline:
+1. For each genome, extract marker genes and align against the current mOTUsv2 database
+
+```bash
+for i in $(cat extend_mOTUs_DB/TEST/genomes.list); do ./extend_mOTUs_DB/SCRIPTS/extend_mOTUs_addGenome.sh extend_mOTUs_DB/TEST/genomes/$i.fasta $i extended_db extend_mOTUs_DB/SCRIPTS/ $MOTUS_DIR; done
+```
+
+2. Append genomes that add new information to the database and rebuild a new mOTUsv2 DB.
+
+```bash
+./extend_mOTUs_DB/SCRIPTS/extend_mOTUs_generateDB.sh extend_mOTUs_DB/TEST/genomes.list newdb extend_mOTUs_DB/TEST/taxonomy_file.txt extended_db extend_mOTUs_DB/SCRIPTS/ $MOTUS_DIR
+```
+
+3. Replace the old database with the new database:
+
+```
+mv mOTUs_v2-2.1.1/db_mOTU mOTUs_v2-2.1.1/db_mOTU_before_extension/
+mv extended_db/newdb/db_mOTU mOTUs_v2-2.1.1/
+```
+
+
+## Difference between original and extended database
+
+Run mOTUsv2 before and after extension with standard parameters:
+
+```
+# Run before extension
+mOTUs_v2-2.1.1/motus profile -g 1 -c -s extend_mOTUs_DB/TEST/test1_single.fastq > before_extension.motus
+# Run after extension
+mOTUs_v2-2.1.1/motus profile -g 1 -c -s extend_mOTUs_DB/TEST/test1_single.fastq > after_extension.motus
+```
+
+Check differences between both profiles
+
+```
+diff after_extension.motus before_extension.motus
+1c1
+< # git tag version manual_update |  motus version manual_update | map_tax manual_update | gene database: nrmanual_update | calc_mgc manual_update -y insert.scaled_counts -l 75 | calc_motu manual_update -k mOTU -C no_CAMI -g 1 -c | taxonomy: ref_mOTU_manual_update meta_mOTU_manual_update
+---
+> # git tag version 2.1.1 |  motus version 2.1.1 | map_tax 2.1.1 | gene database: nr2.1.1 | calc_mgc 2.1.1 -y insert.scaled_counts -l 75 | calc_motu 2.1.1 -k mOTU -C no_CAMI -g 1 -c | taxonomy: ref_mOTU_2.1.1 meta_mOTU_2.1.1
+1425c1425
+< Sphingobacterium spiritivorum [ref_mOTU_v2_1426]	0
+---
+> Sphingobacterium spiritivorum [ref_mOTU_v2_1426]	1
+7731,7733d7730
+< Chryseobacterium indologenes [newdb_1]	0
+< unknown Sphingobacterium [newdb_2]	2
+< unknown Leadbetterella [newdb_3]	0
+```
