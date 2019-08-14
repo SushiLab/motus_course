@@ -4,7 +4,7 @@
 
 # Session	1:	Introductory	Lecture (09:00 - 10:00)
 
-1.1 mOTUs	motivation and	method
+1.1 [mOTUs	motivation and	method](documentation/mOTUs_Sunagawa-compressed.pdf)
 
 # Session	2:	Preparation	and	Installation (10:30 - 12:00)
 
