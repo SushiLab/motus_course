@@ -22,7 +22,7 @@ The extender tool is an addon tool that has to be downloaded and installed:
 
 ```bash
 #download extender archive
-wget https://motu-tool.org/data/extend_mOTUs_DBv2.tar.gz
+wget https://motu-tool.org/data/extend_mOTUs_DBv3.tar.gz
 #decompress
 tar -xzvf extend_mOTUs_DBv2.tar.gz
 cd extend_mOTUs_DBv2
